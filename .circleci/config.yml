@@ -1,0 +1,13 @@
+version: 2
+
+jobs:
+  test:
+    docker:
+      - image: library/node:11.6.0
+      - image: selenoid/chrome:72.0
+        environment:
+          - SCREEN_RESOLUTION: 1280x960x24
+    steps:
+    - checkout
+    - run: npm ci
+    - run: npm test
