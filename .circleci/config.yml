@@ -16,5 +16,15 @@ workflows:
   version: 2
   test:
     jobs:
-      - test
-      
+      - test:
+          filters:
+            branches:
+              only: 
+                - master
+
+  
+experimental:
+  notify:
+    branches:
+      only:
+        - master
