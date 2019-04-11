@@ -53,7 +53,19 @@ exports.config = {
       // 5 instances get started at a time.
       maxInstances: 1,
       //
-      browserName: 'chrome'
+      browserName: 'chrome',
+      chromeOptions: {
+        args: [
+          '--enable-automation',
+          '--disable-gpu',
+          '--disable-setuid-sandbox',
+          '--window-size=1280,960',
+          '--no-sandbox',
+          '--disable-dev-shm-usage'
+        ]
+      },
+      loggingPrefs: { driver: 'INFO', browser: 'SEVERE' }
+
       // If outputDir is provided WebdriverIO can capture driver session logs
       // it is possible to configure which logTypes to include/exclude.
       // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
