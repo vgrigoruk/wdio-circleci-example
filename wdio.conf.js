@@ -8,7 +8,7 @@ exports.config = {
   // on a remote machine).
   runner: 'local',
   path: '/',
-  port: process.env.CI === 'true' ? 4444 : 9515,
+  port: process.env.CI ? 4444 : 9515,
 
   //
   // ==================
@@ -119,7 +119,7 @@ exports.config = {
   // Services take over a specific job you don't want to take care of. They enhance
   // your test setup with almost no effort. Unlike plugins, they don't add new
   // commands. Instead, they hook themselves up into the test process.
-  services: ['chromedriver'],
+  services: process.env.CI ? [] : ['chromedriver'],
   //
   // Framework you want to run your specs with.
   // The following are supported: Mocha, Jasmine, and Cucumber
