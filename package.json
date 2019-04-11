@@ -16,6 +16,7 @@
     "@wdio/sync": "^5.7.9",
     "chai": "^4.2.0",
     "chromedriver": "^2.46.0",
+    "prettier": "^1.16.4",
     "wdio-chromedriver-service": "^5.0.1"
   }
 }
